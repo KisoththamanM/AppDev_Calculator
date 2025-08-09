@@ -55,7 +55,7 @@ class _CalculatorState extends State<Calculator> {
                   children: [
                     //Calculator buttons line 1///////////////////////////////////
                     SizedBox(
-                      height: screenHeight * 0.14 - 6.0,
+                      height: screenWidth * 0.25 - 6.25,
                       width: screenWidth,
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
@@ -83,7 +83,8 @@ class _CalculatorState extends State<Calculator> {
                               child: Center(
                                 child: Text(
                                   'AC',
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 35.0),
                                 ),
                               ),
                             ),
@@ -121,6 +122,7 @@ class _CalculatorState extends State<Calculator> {
                                 child: Icon(
                                   Icons.backspace_outlined,
                                   color: Colors.white,
+                                  size: 35.0,
                                 ),
                               ),
                             ),
@@ -147,7 +149,8 @@ class _CalculatorState extends State<Calculator> {
                               child: Center(
                                 child: Text(
                                   '÷',
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 40.0),
                                 ),
                               ),
                             ),
@@ -157,7 +160,7 @@ class _CalculatorState extends State<Calculator> {
                     ),
                     //Calculator buttons line 2///////////////////////////////////
                     SizedBox(
-                      height: screenHeight * 0.14 - 6.0,
+                      height: screenWidth * 0.25 - 6.25,
                       width: screenWidth,
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
@@ -185,7 +188,8 @@ class _CalculatorState extends State<Calculator> {
                               child: Center(
                                 child: Text(
                                   '7',
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 30.0),
                                 ),
                               ),
                             ),
@@ -212,7 +216,8 @@ class _CalculatorState extends State<Calculator> {
                               child: Center(
                                 child: Text(
                                   '8',
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 30.0),
                                 ),
                               ),
                             ),
@@ -239,7 +244,8 @@ class _CalculatorState extends State<Calculator> {
                               child: Center(
                                 child: Text(
                                   '9',
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 30.0),
                                 ),
                               ),
                             ),
@@ -266,7 +272,8 @@ class _CalculatorState extends State<Calculator> {
                               child: Center(
                                 child: Text(
                                   '×',
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 40.0),
                                 ),
                               ),
                             ),
@@ -276,7 +283,7 @@ class _CalculatorState extends State<Calculator> {
                     ),
                     //Calculator buttons line 3///////////////////////////////////
                     SizedBox(
-                      height: screenHeight * 0.14 - 6.0,
+                      height: screenWidth * 0.25 - 6.25,
                       width: screenWidth,
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
@@ -304,7 +311,8 @@ class _CalculatorState extends State<Calculator> {
                               child: Center(
                                 child: Text(
                                   '4',
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 30.0),
                                 ),
                               ),
                             ),
@@ -331,7 +339,8 @@ class _CalculatorState extends State<Calculator> {
                               child: Center(
                                 child: Text(
                                   '5',
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 30.0),
                                 ),
                               ),
                             ),
@@ -358,7 +367,8 @@ class _CalculatorState extends State<Calculator> {
                               child: Center(
                                 child: Text(
                                   '6',
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 30.0),
                                 ),
                               ),
                             ),
@@ -385,7 +395,8 @@ class _CalculatorState extends State<Calculator> {
                               child: Center(
                                 child: Text(
                                   '-',
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 40.0),
                                 ),
                               ),
                             ),
@@ -395,7 +406,7 @@ class _CalculatorState extends State<Calculator> {
                     ),
                     //Calculator buttons line 4///////////////////////////////////
                     SizedBox(
-                      height: screenHeight * 0.14 - 6.0,
+                      height: screenWidth * 0.25 - 6.25,
                       width: screenWidth,
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
@@ -423,7 +434,8 @@ class _CalculatorState extends State<Calculator> {
                               child: Center(
                                 child: Text(
                                   '1',
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 30.0),
                                 ),
                               ),
                             ),
@@ -450,7 +462,8 @@ class _CalculatorState extends State<Calculator> {
                               child: Center(
                                 child: Text(
                                   '2',
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 30.0),
                                 ),
                               ),
                             ),
@@ -477,7 +490,8 @@ class _CalculatorState extends State<Calculator> {
                               child: Center(
                                 child: Text(
                                   '3',
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 30.0),
                                 ),
                               ),
                             ),
@@ -504,7 +518,8 @@ class _CalculatorState extends State<Calculator> {
                               child: Center(
                                 child: Text(
                                   '+',
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 40.0),
                                 ),
                               ),
                             ),
@@ -514,7 +529,7 @@ class _CalculatorState extends State<Calculator> {
                     ),
                     //Calculator buttons line 5///////////////////////////////////
                     SizedBox(
-                      height: screenHeight * 0.14 - 6.0,
+                      height: screenWidth * 0.25 - 6.25,
                       width: screenWidth,
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
@@ -542,7 +557,8 @@ class _CalculatorState extends State<Calculator> {
                               child: Center(
                                 child: Text(
                                   '0',
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 30.0),
                                 ),
                               ),
                             ),
@@ -569,7 +585,8 @@ class _CalculatorState extends State<Calculator> {
                               child: Center(
                                 child: Text(
                                   '.',
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 30.0),
                                 ),
                               ),
                             ),
@@ -602,7 +619,8 @@ class _CalculatorState extends State<Calculator> {
                               child: Center(
                                 child: Text(
                                   '=',
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 30.0),
                                 ),
                               ),
                             ),
