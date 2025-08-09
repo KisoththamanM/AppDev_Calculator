@@ -2,8 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
 
 void main() {
+  final lightTheme = ThemeData(
+      brightness: Brightness.light,
+      primaryColor: Colors.blueAccent,
+      scaffoldBackgroundColor: Colors.white,
+      textTheme: TextTheme(
+          bodyLarge: TextStyle(color: Colors.white),
+          bodyMedium: TextStyle(color: Colors.black)));
+
+  final darkTheme = ThemeData(
+      brightness: Brightness.dark,
+      primaryColor: Color(0xFFF69D20),
+      scaffoldBackgroundColor: Color(0xFF353535),
+      textTheme: TextTheme(
+          bodyLarge: TextStyle(color: Colors.black),
+          bodyMedium: TextStyle(color: Colors.white)));
+
   runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: darkTheme,
       title: 'Calculator',
       home: Calculator()));
 }
@@ -18,6 +35,7 @@ class Calculator extends StatefulWidget {
 class _CalculatorState extends State<Calculator> {
   String expression = "";
   String data = "";
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -25,10 +43,10 @@ class _CalculatorState extends State<Calculator> {
         MediaQuery.of(context).padding.top -
         MediaQuery.of(context).padding.bottom;
     double buttonBorderRadius = screenHeight * 0.07 - 3;
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Color(0xFF353535),
-        body: SizedBox(
+    return Scaffold(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      body: SafeArea(
+        child: SizedBox(
           height: screenHeight,
           width: screenWidth,
           child: Column(
@@ -39,16 +57,19 @@ class _CalculatorState extends State<Calculator> {
                 padding: EdgeInsets.all(5.0),
                 height: screenHeight * 0.3,
                 width: screenWidth,
-                color: Color(0xFF353535),
+                color: Theme.of(context).scaffoldBackgroundColor,
                 child: Align(
                   alignment: Alignment.bottomRight,
-                  child: Text(data, style: TextStyle(color: Colors.white)),
+                  child: Text(data,
+                      style: TextStyle(
+                          color: Theme.of(context).textTheme.bodyMedium!.color,
+                          fontSize: 45.0)),
                 ),
               ),
               Container(
                 height: screenHeight * 0.7,
                 width: screenWidth,
-                color: Color(0xFF353535),
+                color: Theme.of(context).scaffoldBackgroundColor,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -71,11 +92,7 @@ class _CalculatorState extends State<Calculator> {
                             child: Container(
                               width: screenWidth * 0.5 - 7.5,
                               decoration: BoxDecoration(
-                                color: Colors.transparent,
-                                border: Border.all(
-                                  width: 1.0,
-                                  color: Colors.white,
-                                ),
+                                color: Theme.of(context).primaryColor,
                                 borderRadius: BorderRadius.circular(
                                   buttonBorderRadius,
                                 ),
@@ -84,7 +101,11 @@ class _CalculatorState extends State<Calculator> {
                                 child: Text(
                                   'AC',
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 35.0),
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .bodyLarge!
+                                          .color,
+                                      fontSize: 35.0),
                                 ),
                               ),
                             ),
@@ -109,11 +130,7 @@ class _CalculatorState extends State<Calculator> {
                             child: Container(
                               width: screenWidth * 0.25 - 6.25,
                               decoration: BoxDecoration(
-                                color: Colors.transparent,
-                                border: Border.all(
-                                  width: 1.0,
-                                  color: Colors.white,
-                                ),
+                                color: Theme.of(context).primaryColor,
                                 borderRadius: BorderRadius.circular(
                                   buttonBorderRadius,
                                 ),
@@ -121,7 +138,10 @@ class _CalculatorState extends State<Calculator> {
                               child: Center(
                                 child: Icon(
                                   Icons.backspace_outlined,
-                                  color: Colors.white,
+                                  color: Theme.of(context)
+                                      .textTheme
+                                      .bodyLarge!
+                                      .color,
                                   size: 35.0,
                                 ),
                               ),
@@ -137,11 +157,7 @@ class _CalculatorState extends State<Calculator> {
                             child: Container(
                               width: screenWidth * 0.25 - 6.25,
                               decoration: BoxDecoration(
-                                color: Colors.transparent,
-                                border: Border.all(
-                                  width: 1.0,
-                                  color: Colors.white,
-                                ),
+                                color: Theme.of(context).primaryColor,
                                 borderRadius: BorderRadius.circular(
                                   buttonBorderRadius,
                                 ),
@@ -150,7 +166,11 @@ class _CalculatorState extends State<Calculator> {
                                 child: Text(
                                   '÷',
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 40.0),
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .bodyLarge!
+                                          .color,
+                                      fontSize: 40.0),
                                 ),
                               ),
                             ),
@@ -189,7 +209,11 @@ class _CalculatorState extends State<Calculator> {
                                 child: Text(
                                   '7',
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 30.0),
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .color,
+                                      fontSize: 30.0),
                                 ),
                               ),
                             ),
@@ -217,7 +241,11 @@ class _CalculatorState extends State<Calculator> {
                                 child: Text(
                                   '8',
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 30.0),
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .color,
+                                      fontSize: 30.0),
                                 ),
                               ),
                             ),
@@ -245,7 +273,11 @@ class _CalculatorState extends State<Calculator> {
                                 child: Text(
                                   '9',
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 30.0),
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .color,
+                                      fontSize: 30.0),
                                 ),
                               ),
                             ),
@@ -260,11 +292,7 @@ class _CalculatorState extends State<Calculator> {
                             child: Container(
                               width: screenWidth * 0.25 - 6.25,
                               decoration: BoxDecoration(
-                                color: Colors.transparent,
-                                border: Border.all(
-                                  width: 1.0,
-                                  color: Colors.white,
-                                ),
+                                color: Theme.of(context).primaryColor,
                                 borderRadius: BorderRadius.circular(
                                   buttonBorderRadius,
                                 ),
@@ -273,7 +301,11 @@ class _CalculatorState extends State<Calculator> {
                                 child: Text(
                                   '×',
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 40.0),
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .bodyLarge!
+                                          .color,
+                                      fontSize: 40.0),
                                 ),
                               ),
                             ),
@@ -312,7 +344,11 @@ class _CalculatorState extends State<Calculator> {
                                 child: Text(
                                   '4',
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 30.0),
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .color,
+                                      fontSize: 30.0),
                                 ),
                               ),
                             ),
@@ -340,7 +376,11 @@ class _CalculatorState extends State<Calculator> {
                                 child: Text(
                                   '5',
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 30.0),
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .color,
+                                      fontSize: 30.0),
                                 ),
                               ),
                             ),
@@ -368,7 +408,11 @@ class _CalculatorState extends State<Calculator> {
                                 child: Text(
                                   '6',
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 30.0),
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .color,
+                                      fontSize: 30.0),
                                 ),
                               ),
                             ),
@@ -383,11 +427,7 @@ class _CalculatorState extends State<Calculator> {
                             child: Container(
                               width: screenWidth * 0.25 - 6.25,
                               decoration: BoxDecoration(
-                                color: Colors.transparent,
-                                border: Border.all(
-                                  width: 1.0,
-                                  color: Colors.white,
-                                ),
+                                color: Theme.of(context).primaryColor,
                                 borderRadius: BorderRadius.circular(
                                   buttonBorderRadius,
                                 ),
@@ -396,7 +436,11 @@ class _CalculatorState extends State<Calculator> {
                                 child: Text(
                                   '-',
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 40.0),
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .bodyLarge!
+                                          .color,
+                                      fontSize: 40.0),
                                 ),
                               ),
                             ),
@@ -435,7 +479,11 @@ class _CalculatorState extends State<Calculator> {
                                 child: Text(
                                   '1',
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 30.0),
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .color,
+                                      fontSize: 30.0),
                                 ),
                               ),
                             ),
@@ -463,7 +511,11 @@ class _CalculatorState extends State<Calculator> {
                                 child: Text(
                                   '2',
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 30.0),
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .color,
+                                      fontSize: 30.0),
                                 ),
                               ),
                             ),
@@ -491,7 +543,11 @@ class _CalculatorState extends State<Calculator> {
                                 child: Text(
                                   '3',
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 30.0),
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .color,
+                                      fontSize: 30.0),
                                 ),
                               ),
                             ),
@@ -506,11 +562,7 @@ class _CalculatorState extends State<Calculator> {
                             child: Container(
                               width: screenWidth * 0.25 - 6.25,
                               decoration: BoxDecoration(
-                                color: Colors.transparent,
-                                border: Border.all(
-                                  width: 1.0,
-                                  color: Colors.white,
-                                ),
+                                color: Theme.of(context).primaryColor,
                                 borderRadius: BorderRadius.circular(
                                   buttonBorderRadius,
                                 ),
@@ -519,7 +571,11 @@ class _CalculatorState extends State<Calculator> {
                                 child: Text(
                                   '+',
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 40.0),
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .bodyLarge!
+                                          .color,
+                                      fontSize: 40.0),
                                 ),
                               ),
                             ),
@@ -558,7 +614,11 @@ class _CalculatorState extends State<Calculator> {
                                 child: Text(
                                   '0',
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 30.0),
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .color,
+                                      fontSize: 30.0),
                                 ),
                               ),
                             ),
@@ -586,7 +646,11 @@ class _CalculatorState extends State<Calculator> {
                                 child: Text(
                                   '.',
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 30.0),
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .color,
+                                      fontSize: 30.0),
                                 ),
                               ),
                             ),
@@ -607,11 +671,7 @@ class _CalculatorState extends State<Calculator> {
                             child: Container(
                               width: screenWidth * 0.5 - 7.5,
                               decoration: BoxDecoration(
-                                color: Colors.transparent,
-                                border: Border.all(
-                                  width: 1.0,
-                                  color: Colors.white,
-                                ),
+                                color: Colors.black38,
                                 borderRadius: BorderRadius.circular(
                                   buttonBorderRadius,
                                 ),
