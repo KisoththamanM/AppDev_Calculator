@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:math_expressions/math_expressions.dart';
 
@@ -132,7 +133,7 @@ class _CalculatorState extends State<Calculator> {
                             ),
                           ),
                         ),
-                      )
+                      ),
                     ]),
                     Container(
                       height: screenHeight * 0.7,
@@ -150,21 +151,21 @@ class _CalculatorState extends State<Calculator> {
                               mainAxisSize: MainAxisSize.min,
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      expression = "";
-                                      data = "";
-                                    });
-                                  },
-                                  child: Container(
-                                    width: screenWidth * 0.5 - 7.5,
-                                    decoration: BoxDecoration(
-                                      color: Theme.of(context).primaryColor,
-                                      borderRadius: BorderRadius.circular(
-                                        buttonBorderRadius,
-                                      ),
+                                Container(
+                                  width: screenWidth * 0.5 - 7.5,
+                                  decoration: BoxDecoration(
+                                    color: Theme.of(context).primaryColor,
+                                    borderRadius: BorderRadius.circular(
+                                      buttonBorderRadius,
                                     ),
+                                  ),
+                                  child: CupertinoButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        expression = "";
+                                        data = "";
+                                      });
+                                    },
                                     child: Center(
                                       child: Text(
                                         'AC',
@@ -178,31 +179,31 @@ class _CalculatorState extends State<Calculator> {
                                     ),
                                   ),
                                 ),
-                                InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      if (expression.isNotEmpty) {
-                                        expression = expression.substring(
-                                          0,
-                                          expression.length - 1,
-                                        );
-                                      }
-                                      if (data.isNotEmpty) {
-                                        data = data.substring(
-                                          0,
-                                          data.length - 1,
-                                        );
-                                      }
-                                    });
-                                  },
-                                  child: Container(
-                                    width: screenWidth * 0.25 - 6.25,
-                                    decoration: BoxDecoration(
-                                      color: Theme.of(context).primaryColor,
-                                      borderRadius: BorderRadius.circular(
-                                        buttonBorderRadius,
-                                      ),
+                                Container(
+                                  width: screenWidth * 0.25 - 6.25,
+                                  decoration: BoxDecoration(
+                                    color: Theme.of(context).primaryColor,
+                                    borderRadius: BorderRadius.circular(
+                                      buttonBorderRadius,
                                     ),
+                                  ),
+                                  child: CupertinoButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        if (expression.isNotEmpty) {
+                                          expression = expression.substring(
+                                            0,
+                                            expression.length - 1,
+                                          );
+                                        }
+                                        if (data.isNotEmpty) {
+                                          data = data.substring(
+                                            0,
+                                            data.length - 1,
+                                          );
+                                        }
+                                      });
+                                    },
                                     child: Center(
                                       child: Icon(
                                         Icons.backspace_outlined,
@@ -215,21 +216,21 @@ class _CalculatorState extends State<Calculator> {
                                     ),
                                   ),
                                 ),
-                                InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      expression += "/";
-                                      data += "÷";
-                                    });
-                                  },
-                                  child: Container(
-                                    width: screenWidth * 0.25 - 6.25,
-                                    decoration: BoxDecoration(
-                                      color: Theme.of(context).primaryColor,
-                                      borderRadius: BorderRadius.circular(
-                                        buttonBorderRadius,
-                                      ),
+                                Container(
+                                  width: screenWidth * 0.25 - 6.25,
+                                  decoration: BoxDecoration(
+                                    color: Theme.of(context).primaryColor,
+                                    borderRadius: BorderRadius.circular(
+                                      buttonBorderRadius,
                                     ),
+                                  ),
+                                  child: CupertinoButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        expression += "/";
+                                        data += "÷";
+                                      });
+                                    },
                                     child: Center(
                                       child: Text(
                                         '÷',
@@ -254,25 +255,25 @@ class _CalculatorState extends State<Calculator> {
                               mainAxisSize: MainAxisSize.min,
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      expression += "7";
-                                      data += "7";
-                                    });
-                                  },
-                                  child: Container(
-                                    width: screenWidth * 0.25 - 6.25,
-                                    decoration: BoxDecoration(
-                                      color: Colors.transparent,
-                                      border: Border.all(
-                                        width: 1.0,
-                                        color: Colors.white,
-                                      ),
-                                      borderRadius: BorderRadius.circular(
-                                        buttonBorderRadius,
-                                      ),
+                                Container(
+                                  width: screenWidth * 0.25 - 6.25,
+                                  decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    border: Border.all(
+                                      width: 1.0,
+                                      color: Colors.white,
                                     ),
+                                    borderRadius: BorderRadius.circular(
+                                      buttonBorderRadius,
+                                    ),
+                                  ),
+                                  child: CupertinoButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        expression += "7";
+                                        data += "7";
+                                      });
+                                    },
                                     child: Center(
                                       child: Text(
                                         '7',
@@ -286,25 +287,25 @@ class _CalculatorState extends State<Calculator> {
                                     ),
                                   ),
                                 ),
-                                InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      expression += "8";
-                                      data += "8";
-                                    });
-                                  },
-                                  child: Container(
-                                    width: screenWidth * 0.25 - 6.25,
-                                    decoration: BoxDecoration(
-                                      color: Colors.transparent,
-                                      border: Border.all(
-                                        width: 1.0,
-                                        color: Colors.white,
-                                      ),
-                                      borderRadius: BorderRadius.circular(
-                                        buttonBorderRadius,
-                                      ),
+                                Container(
+                                  width: screenWidth * 0.25 - 6.25,
+                                  decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    border: Border.all(
+                                      width: 1.0,
+                                      color: Colors.white,
                                     ),
+                                    borderRadius: BorderRadius.circular(
+                                      buttonBorderRadius,
+                                    ),
+                                  ),
+                                  child: CupertinoButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        expression += "8";
+                                        data += "8";
+                                      });
+                                    },
                                     child: Center(
                                       child: Text(
                                         '8',
@@ -318,25 +319,25 @@ class _CalculatorState extends State<Calculator> {
                                     ),
                                   ),
                                 ),
-                                InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      expression += "9";
-                                      data += "9";
-                                    });
-                                  },
-                                  child: Container(
-                                    width: screenWidth * 0.25 - 6.25,
-                                    decoration: BoxDecoration(
-                                      color: Colors.transparent,
-                                      border: Border.all(
-                                        width: 1.0,
-                                        color: Colors.white,
-                                      ),
-                                      borderRadius: BorderRadius.circular(
-                                        buttonBorderRadius,
-                                      ),
+                                Container(
+                                  width: screenWidth * 0.25 - 6.25,
+                                  decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    border: Border.all(
+                                      width: 1.0,
+                                      color: Colors.white,
                                     ),
+                                    borderRadius: BorderRadius.circular(
+                                      buttonBorderRadius,
+                                    ),
+                                  ),
+                                  child: CupertinoButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        expression += "9";
+                                        data += "9";
+                                      });
+                                    },
                                     child: Center(
                                       child: Text(
                                         '9',
@@ -350,21 +351,21 @@ class _CalculatorState extends State<Calculator> {
                                     ),
                                   ),
                                 ),
-                                InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      expression += "*";
-                                      data += "×";
-                                    });
-                                  },
-                                  child: Container(
-                                    width: screenWidth * 0.25 - 6.25,
-                                    decoration: BoxDecoration(
-                                      color: Theme.of(context).primaryColor,
-                                      borderRadius: BorderRadius.circular(
-                                        buttonBorderRadius,
-                                      ),
+                                Container(
+                                  width: screenWidth * 0.25 - 6.25,
+                                  decoration: BoxDecoration(
+                                    color: Theme.of(context).primaryColor,
+                                    borderRadius: BorderRadius.circular(
+                                      buttonBorderRadius,
                                     ),
+                                  ),
+                                  child: CupertinoButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        expression += "*";
+                                        data += "×";
+                                      });
+                                    },
                                     child: Center(
                                       child: Text(
                                         '×',
@@ -389,25 +390,25 @@ class _CalculatorState extends State<Calculator> {
                               mainAxisSize: MainAxisSize.min,
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      expression += "4";
-                                      data += "4";
-                                    });
-                                  },
-                                  child: Container(
-                                    width: screenWidth * 0.25 - 6.25,
-                                    decoration: BoxDecoration(
-                                      color: Colors.transparent,
-                                      border: Border.all(
-                                        width: 1.0,
-                                        color: Colors.white,
-                                      ),
-                                      borderRadius: BorderRadius.circular(
-                                        buttonBorderRadius,
-                                      ),
+                                Container(
+                                  width: screenWidth * 0.25 - 6.25,
+                                  decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    border: Border.all(
+                                      width: 1.0,
+                                      color: Colors.white,
                                     ),
+                                    borderRadius: BorderRadius.circular(
+                                      buttonBorderRadius,
+                                    ),
+                                  ),
+                                  child: CupertinoButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        expression += "4";
+                                        data += "4";
+                                      });
+                                    },
                                     child: Center(
                                       child: Text(
                                         '4',
@@ -421,25 +422,25 @@ class _CalculatorState extends State<Calculator> {
                                     ),
                                   ),
                                 ),
-                                InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      expression += "5";
-                                      data += "5";
-                                    });
-                                  },
-                                  child: Container(
-                                    width: screenWidth * 0.25 - 6.25,
-                                    decoration: BoxDecoration(
-                                      color: Colors.transparent,
-                                      border: Border.all(
-                                        width: 1.0,
-                                        color: Colors.white,
-                                      ),
-                                      borderRadius: BorderRadius.circular(
-                                        buttonBorderRadius,
-                                      ),
+                                Container(
+                                  width: screenWidth * 0.25 - 6.25,
+                                  decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    border: Border.all(
+                                      width: 1.0,
+                                      color: Colors.white,
                                     ),
+                                    borderRadius: BorderRadius.circular(
+                                      buttonBorderRadius,
+                                    ),
+                                  ),
+                                  child: CupertinoButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        expression += "5";
+                                        data += "5";
+                                      });
+                                    },
                                     child: Center(
                                       child: Text(
                                         '5',
@@ -453,25 +454,25 @@ class _CalculatorState extends State<Calculator> {
                                     ),
                                   ),
                                 ),
-                                InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      expression += "6";
-                                      data += "6";
-                                    });
-                                  },
-                                  child: Container(
-                                    width: screenWidth * 0.25 - 6.25,
-                                    decoration: BoxDecoration(
-                                      color: Colors.transparent,
-                                      border: Border.all(
-                                        width: 1.0,
-                                        color: Colors.white,
-                                      ),
-                                      borderRadius: BorderRadius.circular(
-                                        buttonBorderRadius,
-                                      ),
+                                Container(
+                                  width: screenWidth * 0.25 - 6.25,
+                                  decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    border: Border.all(
+                                      width: 1.0,
+                                      color: Colors.white,
                                     ),
+                                    borderRadius: BorderRadius.circular(
+                                      buttonBorderRadius,
+                                    ),
+                                  ),
+                                  child: CupertinoButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        expression += "6";
+                                        data += "6";
+                                      });
+                                    },
                                     child: Center(
                                       child: Text(
                                         '6',
@@ -485,21 +486,21 @@ class _CalculatorState extends State<Calculator> {
                                     ),
                                   ),
                                 ),
-                                InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      expression += "-";
-                                      data += "-";
-                                    });
-                                  },
-                                  child: Container(
-                                    width: screenWidth * 0.25 - 6.25,
-                                    decoration: BoxDecoration(
-                                      color: Theme.of(context).primaryColor,
-                                      borderRadius: BorderRadius.circular(
-                                        buttonBorderRadius,
-                                      ),
+                                Container(
+                                  width: screenWidth * 0.25 - 6.25,
+                                  decoration: BoxDecoration(
+                                    color: Theme.of(context).primaryColor,
+                                    borderRadius: BorderRadius.circular(
+                                      buttonBorderRadius,
                                     ),
+                                  ),
+                                  child: CupertinoButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        expression += "-";
+                                        data += "-";
+                                      });
+                                    },
                                     child: Center(
                                       child: Text(
                                         '-',
@@ -524,25 +525,25 @@ class _CalculatorState extends State<Calculator> {
                               mainAxisSize: MainAxisSize.min,
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      expression += "1";
-                                      data += "1";
-                                    });
-                                  },
-                                  child: Container(
-                                    width: screenWidth * 0.25 - 6.25,
-                                    decoration: BoxDecoration(
-                                      color: Colors.transparent,
-                                      border: Border.all(
-                                        width: 1.0,
-                                        color: Colors.white,
-                                      ),
-                                      borderRadius: BorderRadius.circular(
-                                        buttonBorderRadius,
-                                      ),
+                                Container(
+                                  width: screenWidth * 0.25 - 6.25,
+                                  decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    border: Border.all(
+                                      width: 1.0,
+                                      color: Colors.white,
                                     ),
+                                    borderRadius: BorderRadius.circular(
+                                      buttonBorderRadius,
+                                    ),
+                                  ),
+                                  child: CupertinoButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        expression += "1";
+                                        data += "1";
+                                      });
+                                    },
                                     child: Center(
                                       child: Text(
                                         '1',
@@ -556,25 +557,25 @@ class _CalculatorState extends State<Calculator> {
                                     ),
                                   ),
                                 ),
-                                InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      expression += "2";
-                                      data += "2";
-                                    });
-                                  },
-                                  child: Container(
-                                    width: screenWidth * 0.25 - 6.25,
-                                    decoration: BoxDecoration(
-                                      color: Colors.transparent,
-                                      border: Border.all(
-                                        width: 1.0,
-                                        color: Colors.white,
-                                      ),
-                                      borderRadius: BorderRadius.circular(
-                                        buttonBorderRadius,
-                                      ),
+                                Container(
+                                  width: screenWidth * 0.25 - 6.25,
+                                  decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    border: Border.all(
+                                      width: 1.0,
+                                      color: Colors.white,
                                     ),
+                                    borderRadius: BorderRadius.circular(
+                                      buttonBorderRadius,
+                                    ),
+                                  ),
+                                  child: CupertinoButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        expression += "2";
+                                        data += "2";
+                                      });
+                                    },
                                     child: Center(
                                       child: Text(
                                         '2',
@@ -588,25 +589,25 @@ class _CalculatorState extends State<Calculator> {
                                     ),
                                   ),
                                 ),
-                                InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      expression += "3";
-                                      data += "3";
-                                    });
-                                  },
-                                  child: Container(
-                                    width: screenWidth * 0.25 - 6.25,
-                                    decoration: BoxDecoration(
-                                      color: Colors.transparent,
-                                      border: Border.all(
-                                        width: 1.0,
-                                        color: Colors.white,
-                                      ),
-                                      borderRadius: BorderRadius.circular(
-                                        buttonBorderRadius,
-                                      ),
+                                Container(
+                                  width: screenWidth * 0.25 - 6.25,
+                                  decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    border: Border.all(
+                                      width: 1.0,
+                                      color: Colors.white,
                                     ),
+                                    borderRadius: BorderRadius.circular(
+                                      buttonBorderRadius,
+                                    ),
+                                  ),
+                                  child: CupertinoButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        expression += "3";
+                                        data += "3";
+                                      });
+                                    },
                                     child: Center(
                                       child: Text(
                                         '3',
@@ -620,21 +621,21 @@ class _CalculatorState extends State<Calculator> {
                                     ),
                                   ),
                                 ),
-                                InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      expression += "+";
-                                      data += "+";
-                                    });
-                                  },
-                                  child: Container(
-                                    width: screenWidth * 0.25 - 6.25,
-                                    decoration: BoxDecoration(
-                                      color: Theme.of(context).primaryColor,
-                                      borderRadius: BorderRadius.circular(
-                                        buttonBorderRadius,
-                                      ),
+                                Container(
+                                  width: screenWidth * 0.25 - 6.25,
+                                  decoration: BoxDecoration(
+                                    color: Theme.of(context).primaryColor,
+                                    borderRadius: BorderRadius.circular(
+                                      buttonBorderRadius,
                                     ),
+                                  ),
+                                  child: CupertinoButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        expression += "+";
+                                        data += "+";
+                                      });
+                                    },
                                     child: Center(
                                       child: Text(
                                         '+',
@@ -659,25 +660,25 @@ class _CalculatorState extends State<Calculator> {
                               mainAxisSize: MainAxisSize.min,
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      expression += "0";
-                                      data += "0";
-                                    });
-                                  },
-                                  child: Container(
-                                    width: screenWidth * 0.25 - 6.25,
-                                    decoration: BoxDecoration(
-                                      color: Colors.transparent,
-                                      border: Border.all(
-                                        width: 1.0,
-                                        color: Colors.white,
-                                      ),
-                                      borderRadius: BorderRadius.circular(
-                                        buttonBorderRadius,
-                                      ),
+                                Container(
+                                  width: screenWidth * 0.25 - 6.25,
+                                  decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    border: Border.all(
+                                      width: 1.0,
+                                      color: Colors.white,
                                     ),
+                                    borderRadius: BorderRadius.circular(
+                                      buttonBorderRadius,
+                                    ),
+                                  ),
+                                  child: CupertinoButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        expression += "0";
+                                        data += "0";
+                                      });
+                                    },
                                     child: Center(
                                       child: Text(
                                         '0',
@@ -691,25 +692,25 @@ class _CalculatorState extends State<Calculator> {
                                     ),
                                   ),
                                 ),
-                                InkWell(
-                                  onTap: () {
-                                    setState(() {
-                                      expression += ".";
-                                      data += ".";
-                                    });
-                                  },
-                                  child: Container(
-                                    width: screenWidth * 0.25 - 6.25,
-                                    decoration: BoxDecoration(
-                                      color: Colors.transparent,
-                                      border: Border.all(
-                                        width: 1.0,
-                                        color: Colors.white,
-                                      ),
-                                      borderRadius: BorderRadius.circular(
-                                        buttonBorderRadius,
-                                      ),
+                                Container(
+                                  width: screenWidth * 0.25 - 6.25,
+                                  decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    border: Border.all(
+                                      width: 1.0,
+                                      color: Colors.white,
                                     ),
+                                    borderRadius: BorderRadius.circular(
+                                      buttonBorderRadius,
+                                    ),
+                                  ),
+                                  child: CupertinoButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        expression += ".";
+                                        data += ".";
+                                      });
+                                    },
                                     child: Center(
                                       child: Text(
                                         '.',
@@ -723,27 +724,28 @@ class _CalculatorState extends State<Calculator> {
                                     ),
                                   ),
                                 ),
-                                InkWell(
-                                  onTap: () {
-                                    ShuntingYardParser p = ShuntingYardParser();
-                                    Expression exp = p.parse(expression);
-                                    ContextModel cm = ContextModel();
-                                    double result =
-                                        exp.evaluate(EvaluationType.REAL, cm);
-
-                                    setState(() {
-                                      expression = result.toString();
-                                      data = expression;
-                                    });
-                                  },
-                                  child: Container(
-                                    width: screenWidth * 0.5 - 7.5,
-                                    decoration: BoxDecoration(
-                                      color: Colors.black38,
-                                      borderRadius: BorderRadius.circular(
-                                        buttonBorderRadius,
-                                      ),
+                                Container(
+                                  width: screenWidth * 0.5 - 7.5,
+                                  decoration: BoxDecoration(
+                                    color: Colors.black38,
+                                    borderRadius: BorderRadius.circular(
+                                      buttonBorderRadius,
                                     ),
+                                  ),
+                                  child: CupertinoButton(
+                                    onPressed: () {
+                                      ShuntingYardParser p =
+                                          ShuntingYardParser();
+                                      Expression exp = p.parse(expression);
+                                      ContextModel cm = ContextModel();
+                                      double result =
+                                          exp.evaluate(EvaluationType.REAL, cm);
+
+                                      setState(() {
+                                        expression = result.toString();
+                                        data = expression;
+                                      });
+                                    },
                                     child: Center(
                                       child: Text(
                                         '=',
